@@ -32,10 +32,13 @@ class StartPerfilFrequenciaCardiacaForm extends PureComponent {
     }
   };
 
-  render() {
+  componentDidUpdate() {
     if(!this.state.loadedValue && this.props.profile.heart_beat){
       this.setState({value: this.props.profile.heart_beat, loadedValue: true})
     }
+  }
+
+  render() {
     return (
       <View style={startPerfilFrequenciaCardiacaFormStyle.mainHolder}>
         <InputRightIconGeneric

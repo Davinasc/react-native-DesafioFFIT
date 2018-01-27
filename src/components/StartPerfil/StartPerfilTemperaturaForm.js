@@ -32,10 +32,13 @@ class StartPerfilTemperaturaForm extends PureComponent {
     this.props.profileActions.changeTemperatureValue(profile);
   }
 
-  render() {
+  componentDidUpdate() {
     if(!this.state.loadedValue && this.props.profile.temperature){
       this.setState({value: Number(this.props.profile.temperature).toFixed(2).replace(/\./, ','), loadedValue: true})
     }
+  }
+
+  render() {
     return (
       <View
         style={startPerfilTemperaturaFormStyle.mainHolder}

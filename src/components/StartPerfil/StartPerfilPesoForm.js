@@ -32,12 +32,13 @@ class StartPerfilPesoForm extends PureComponent {
     }
   };
 
-  render() {
-
+  componentDidUpdate() {
     if(!this.state.loadedValue && this.props.profile.weight){
       this.setState({value: this.props.profile.weight, loadedValue: true})
     }
+  }
 
+  render() {
     return (
       <View style={startPerfilPesoFormStyle.mainHolder}>
         <InputRightIconGeneric

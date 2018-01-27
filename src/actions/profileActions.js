@@ -311,4 +311,9 @@ export const changeGlycemiaValue = data => (dispatch) => {
 export const changeTemperatureValue = data => (dispatch) => {
   const temperature = Number(data.temperature.replace(',', '.'));
   dispatch({ type: PROFILE_UPDATE_TEMPERATURE_SUCCESS, payload: { data: { message: 'Temperatura salva com sucesso!', value: temperature } } });
+  // dispatch({ type: START_LOADING, payload: { msg: 'Enviando dados...' } });
+  // return sendProfileInfo(data).then((res) => {
+  //   dispatch({ type: STOP_LOADING });
+  //   dispatch({ type: PROFILE_UPDATE_TEMPERATURE_SUCCESS, payload: { data: { message: 'Temperatura salva com sucesso!', value: temperature } } });
+  // });
 }

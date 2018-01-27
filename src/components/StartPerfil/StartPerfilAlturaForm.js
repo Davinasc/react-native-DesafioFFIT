@@ -36,13 +36,13 @@ class StartPerfilAlturaForm extends PureComponent {
     this.props.profileActions.changeHeightValue(this.props.profile, profile);
   }
 
-  render() {
-    const profile = this.props.profile;
-
+  componentDidUpdate() {
     if(!this.state.loadedValue && this.props.profile.height){
       this.setState({value: Number(this.props.profile.height).toFixed(2).replace(/\./, ','), loadedValue: true})
     }
+  }
 
+  render() {
     return (
       <View
         style={startPerfilAlturaFormStyle.mainHolder}

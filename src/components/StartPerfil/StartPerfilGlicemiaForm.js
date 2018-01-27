@@ -32,6 +32,12 @@ class StartPerfilGlicemiaForm extends PureComponent {
     }
   };
 
+  componentDidUpdate() {
+    if(!this.state.loadedValue && this.props.profile.glycemia){
+      this.setState({value: this.props.profile.glycemia, loadedValue: true})
+    }
+  }
+
   render() {
     return (
       <View style={startPerfilGlicemiaFormStyle.mainHolder}>

@@ -39,15 +39,16 @@ class StartPerfilPressaoForm extends PureComponent {
     }
   };
 
-  render() {
-
+  componentDidUpdate() {
     if(!this.state.loadedValue && this.props.profile.blood_pressure.systolic && this.props.profile.blood_pressure.diastolic ){
       this.setState({
         systolic: this.props.profile.blood_pressure.systolic,
         diastolic: this.props.profile.blood_pressure.diastolic,
         loadedValue: true})
     }
+  }
 
+  render() {
     return (
       <View style={{flex: 1}}>
 
